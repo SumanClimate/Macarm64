@@ -50,6 +50,6 @@ Generally Mac consider .bash_profile by default and so you might not have .bashr
    make\
    make install
 ## This completes the installtion. You now can check ncdump, nc-config --all, nf-config --all etc. to check the installtion. ##
-A simple c/fortran reading/writing code (https://www.unidata.ucar.edu/software/netcdf/examples/programs/) also be a a good check. While compile these code, netcdf library should be linked as below:\
+A simple c/fortran reading/writing code (https://www.unidata.ucar.edu/software/netcdf/examples/programs/) also be a good check. While compile these code, netcdf library should be linked as below:\
 ifort simple_xy_wr.f90 -I${INSTALLDIR}/include -L${INSTALLDIR}/lib -lnetdff\
 icc simple_xy_wr.c -I${INSTALLDIR}/include -L${INSTALLDIR}/lib -lnetcdf
