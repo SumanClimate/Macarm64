@@ -1,4 +1,4 @@
-This describes the installation of the basic packages (zlib, szip, hdf5, netcdf and udunits) on new Mac system uses ARM64 (M1/M2) with intel compiler. OneAPI intel compiler (version 2021.4.0) are used here. Importantly, installation netcdf-fortran using intel fortran is critical task. I checked that even it installed, it creates library issues while compiling/linking these netcdf fortran library to fortran code that handles netcdf data. After careful investigation with various versions of netcdf packages and other dependencies, I found netcdf-fortran-4.4.0.tar.gz which installs and links fortran code successfully. Follow the procedure:\
+This describes the installation of the basic packages (zlib, szip, hdf5, netcdf and udunits) on new Mac system uses ARM64 (M1/M2) with __intel compiler__. OneAPI intel compiler (version 2021.4.0) are used here. Importantly, installation netcdf-fortran using intel fortran is critical task. I checked that even it installed, it creates library issues while compiling/linking these netcdf fortran library to fortran code that handles netcdf data. After careful investigation with various versions of netcdf packages and other dependencies, I found netcdf-fortran-4.4.0.tar.gz which installs and links fortran code successfully. Follow the procedure:\
 ## INSTALLATION ##
 It is assumed that the system has icc, ifort and icpc installed. bash shell used here\
 export CC=icc FC=ifort F77=ifort F90=ifort CXX=icpc\
@@ -41,7 +41,7 @@ Generally Mac consider .bash_profile by default and so you might not have .bashr
    ./configure --prefix=${INSTALLDIR}\
    make\
    make install
-## 6. netcdf-fortran-4.4.0. 
+## 6. netcdf-fortran-4.4.0. Follow config_f-intel.bash (contained here in the repo)
    export CPPFLAGS=-I${INSTALLDIR}/include\
    export LDFLAGS=-L${INSTALLDIR}/lib\
    tar -zxvf netcdf-fortran-4.4.0.tar\
